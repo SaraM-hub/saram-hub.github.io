@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to the Game</h1>
+    <p>Click the button below to start Level 1.</p>
+    <button onclick="startLevel1()">Start Level 1</button>
+    <button onclick="continueLevel1()">Continue Level 1</button>
+</div>
+
+<script>
+function startLevel1() {
+    console.log('Before clear:', localStorage.getItem('level1Progress')); // Check what is stored
+    localStorage.removeItem('level1Progress'); // Clear saved progress
+    console.log('After clear:', localStorage.getItem('level1Progress')); // Check if it was cleared
+    window.location.href = 'level1.html'; // Redirect to level 1 page
+}
+
+function continueLevel1() {
+    window.location.href = 'level1.html'; // Redirect to level 1 page
+}
+</script>
+
+</body>
+</html>
