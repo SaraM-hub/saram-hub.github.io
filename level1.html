@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Game - Level 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Controls -->
+    <div class="controls">
+        <button id="saveProgress">Save Progress</button>
+        <button id="goHome">Go Home</button>
+        <button id="resetLevel">Reset Level</button>
+    </div>
+  
+    <!-- Carousel Container -->
+    <div class="carousel">
+        <div class="carousel-track">
+            <!-- Upper part: Scene1 - Cavalariças -->
+            <div class="carousel-panel scene1">
+                
+		<!-- Panel 6 -->
+                <div class="scene-clue" id="openPanel6">Pessoa sentada</div>
+                <div class="panel" id="cluePanel6">
+<div>Que tragedia foi acontecer à Dona Ana…Logo hoje que joga o benfica...</div>
+<img src="images/benfica.png" height="100"></img>             
+<div class="clue-option" data-clue="benfica" data-color="orange">benfica</div>
+		</div>
+               
+		<!-- Panel 7 -->
+                <div class="scene-clue" id="openPanel7">Pessoa com corneta</div>
+                <div class="panel" id="cluePanel7">
+                    <div>até os touros estão tristes</div>
+<img src="images/corneta.png" height="100"></img>     
+		    <div class="clue-option" data-clue="corneta" data-color="green">corneta</div>
+		</div>
+
+		<!-- <div class="scene-clue" data-clue="clue2" data-color="green">Clue 2</div>
+                <div class="scene-clue" data-clue="clue3" data-color="blue">Clue 3</div>-->
+              
+	 	<!-- Panel 9 -->
+                <div class="scene-clue" id="openPanel9">Pessoa de pé</div>
+                <div class="panel" id="cluePanel9">
+                    <div>Não sei de nada...eu só disse boa tar de à Dona Bárbara quando ela chegou</div>
+<img src="images/tarde.png" height="100"></img>  
+		    <div class="clue-option" data-clue="tarde" data-color="blue">tarde</div>
+		</div>
+
+		<!-- Panel 4 -->
+                <div class="scene-clue" id="openPanel4">Pessoa encostada</div>
+                <div class="panel" id="cluePanel4">
+		    <div>Até a égua decidiu dar à luz ao final da manhã. Ainda bem que o veteránio estava aqui. Isto ocupou-lhe a tarde toda...</div>
+<img src="images/veterinario.png" height="100"></img>     
+                    <div class="clue-option" data-clue="veterinário" data-color="yellow">veterinário</div>
+<img src="images/manha.png" height="100"></img>  
+<div class="clue-option" data-clue="manhã" data-color="blue">manhã</div>
+
+                </div>
+
+            </div>  
+
+            <!-- Upper part: Scene2 - Corredor -->
+            <div class="carousel-panel scene2">
+		
+                <!-- Panel 5 -->
+                <div class="scene-clue" id="openPanel5">Pessoa com carta</div>
+                <div class="panel" id="cluePanel5">
+		    <div> Logo agora que chegou uma carta da Basta para a Dona Ana...e agora a quem é que eu dou isto?
+<img src="images/carta.jpg" height="220"></img>  
+<div class="clue-option" data-clue="Basta" data-color="orange">Basta</div> </div>
+                </div>
+		<!-- Panel 2 -->
+                <div class="scene-clue" id="openPanel2">Pessoa transtornada</div>
+                <div class="panel" id="cluePanel2">
+<div>...como é que eu vou actuar esta noite?...</div>
+
+<img src="images/cartaoaficionado.jpg" width="200"></img>  
+                    <div class="clue-option" data-clue="pró-touradas" data-color="purple">Cartão Pró-touradas</div>
+<img src="images/cartaz.jpg" width="300"></img>  
+		    <div class="clue-option" data-clue="touradas" data-color="green">Cartaz para tourada</div>
+                </div>  
+                <!-- Panel 3 -->
+                <div class="scene-clue" id="openPanel3">Pessoa perturbada</div>
+                <div class="panel" id="cluePanel3">
+<div>...</div>
+<img src="images/luvas.jpg" width="100"></img> 
+		   <div class="clue-option" data-clue="luvas" data-color="green">Luvas ensanguentadas</div>
+<img src="images/cartaoveterinario.jpg" width="200"></img> 
+                   <div class="clue-option" data-clue="cartão de veterinário" data-color="green">Cartão de veterinário</div>
+<img src="images/peticaotouradas.jpg" width="250"></img> 
+	           <div class="clue-option" data-clue="anti-touradas" data-color="purple">Confirmação de assinatura de petição anti-touradas</div>
+                </div>
+            </div>
+
+            <!-- Upper part: Scene3 - Escritório -->
+            <div class="carousel-panel scene3">
+		 <!-- Panel 1 -->
+                <div class="scene-clue" id="openPanel">Vítima</div>
+                <!-- Hidden panel with two clues -->
+                <div class="panel" id="cluePanel">
+		<div> ... </div>
+		    <img src="images/bandarilhas.jpg"></img>
+                    <div class="clue-option" data-clue="bandarilhas" data-color="green">Bandarilhas</div>
+                </div>   
+
+		<!-- Panel 8 -->
+                <div class="scene-clue" id="openPanel8">Computador</div>
+                <!-- Hidden panel with two clues -->
+                <div class="panel" id="cluePanel8">
+<div> You've got mail</div>
+<img src="images/emailpeticao.jpg" width="300"></img> 
+                    <div class="clue-option" data-clue="e-mail" data-color="green">Email com quem assinou a petição</div>
+<img src="images/emailtestamento.jpg" width="300"></img> 
+                    <div class="clue-option" data-clue="testamento" data-color="green">Email a confirmar alteração do testamento para João Santos</div>
+                </div>   
+		<!-- Panel 10 -->
+                <div class="scene-clue" id="openPanel10">Caixa</div>
+                <div class="panel" id="cluePanel10">
+<img src="images/trofeus.jpg" width="200"></img> 
+                    <div class="clue-option" data-clue="troféu" data-color="green">Troféus de tourada</div>
+		</div>
+
+		<!-- Panel 11 -->
+                <div class="scene-clue" id="openPanel11">Quadro</div>
+                <div class="panel" id="cluePanel11">
+<img src="images/arvore.jpg" width="350"></img> 
+                    <div class="clue-option" data-clue="Ana Garraio" data-color="orange">Ana Garraio</div>
+<div class="clue-option" data-clue="Bárbara Garraio" data-color="orange">Bárbara Garraio</div>
+<div class="clue-option" data-clue="Catarina Garraio" data-color="orange">Catarina Garraio</div>
+<div class="clue-option" data-clue="João Santos" data-color="orange">João Santos</div>
+		</div>
+
+		<!-- Panel 12 -->
+                <div class="scene-clue" id="openPanel12">Recorte de Jornal</div>
+                <div class="panel" id="cluePanel12">
+<img src="images/jornal1.jpg" width="300"></img> 
+                    <div class="clue-option" data-clue="terminar" data-color="blue">terminar</div>
+<div class="clue-option" data-clue="nova-vida" data-color="blue">nova-vida</div>
+
+		</div>
+           
+		<!-- Panel 13 -->
+                <div class="scene-clue" id="openPanel13">Investigadora</div>
+                <div class="panel" id="cluePanel13">
+                    <div>são todos uns animais...</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Carousel Navigation -->
+    <button class="carousel-nav prev"><</button>
+    <button class="carousel-nav next">></button>
+
+    <!-- Middle part: Dropzone -->
+    <div class="dropzone">
+       <div class="dropbox" data-order="1"></div> fazia parte da organização <div class="dropbox" data-order="2"></div> e ia anunciar, no fim desse dia, a intenção de
+        <div class="dropbox" data-order="3"></div> com a ganadaria e passar todos os bens para
+	 <div class="dropbox" data-order="4"></div> que tinha uma posição <div class="dropbox" data-order="5"></div>.</div>
+ <div class="dropzone">
+    
+Durante a <div class="dropbox" data-order="6"></div>, <div class="dropbox" data-order="7"></div> assassinou <div class="dropbox" data-order="8"></div> com recurso a <div class="dropbox" data-order="9"></div>, para impedir o anúncio.
+</p>
+</div>
+
+    <!-- Bottom part: Collected clues -->
+
+<!-- Add a Collected Clue Counter -->
+<div class="clue-counter">
+    Clues collected: <span id="collectedClueCount">0</span> / <span id="totalClues"> </span>
+</div>
+
+    <div class="clues">
+        <!-- Clues will appear here after being collected -->
+    </div>
+</div>
+
+<!-- Message Box -->
+<div class="message" id="messageBox">
+    <p id="messageText"></p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

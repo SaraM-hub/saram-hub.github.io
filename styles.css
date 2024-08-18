@@ -1,0 +1,349 @@
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50vh; /* Adjust height as a percentage of the viewport height */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* Ensure the track is wide enough to hold all panels side by side */
+    height: 99%;
+}
+
+.carousel-panel {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%; /* Ensure each panel takes up the full height of the carousel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 2%;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width calculation */
+}
+
+.scene1 {
+    background-image: url('images/farm-background.jpg'); /* Example path */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: auto; 
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: scroll; /* Keeps the background image fixed in place */
+justify-content: space-between; /* Example: Spread clues evenly */
+}
+.scene2 {
+    background-image: url('images/corridor-background.jpg'); /* Example path */
+     position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: auto; 
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: scroll; /* Keeps the background image fixed in place */
+justify-content: space-between; /* Example: Spread clues evenly */
+
+}
+.scene3 {
+    background-image: url('images/office-background.jpg'); /* Example path */
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: auto; 
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: scroll; /* Keeps the background image fixed in place */
+justify-content: space-between; /* Example: Spread clues evenly */
+
+}
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 1.5rem; /* Make the buttons larger for better visibility on different screens */
+}
+
+.carousel-nav.prev {
+    left: 10px;
+}
+
+.carousel-nav.next {
+    right: 10px;
+}
+
+.scene-clue {
+    margin: 1%;
+    padding: 1%;
+    border: 2px solid #ccc;
+    background-color: #eee;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem; /* Adjust font size based on the viewport */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light background color */
+line-height: 30px;
+}
+
+.clue[data-color="yellow"] {
+    background-color: #ffd700; /* Yellow */
+color: black;
+text-align: center;
+}
+
+.clue[data-color="green"] {
+    background-color: #32cd32; /* Green */
+color: black;
+text-align: center;
+}
+
+.clue[data-color="blue"] {
+    background-color: #1e90ff; /* Blue */
+color: white;
+text-align: center;
+}
+
+.clue[data-color="orange"] {
+    background-color: #ff4500; /* Orange */
+color: white;
+text-align: center;
+}
+
+.clue[data-color="purple"] {
+    background-color: #8a2be2; /* Purple */
+color: white;
+text-align: center;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.scene1, .scene2, .scene3 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background-color: #e6f7ff; /* Light blue background for the scene */
+    position: relative;
+}
+
+.dropzone {
+flex: 0.2s5;
+ 	 display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 5px;
+padding:10px;
+    background-color: #ffe6e6; /* Light red background for the dropzone */
+    position: relative;
+}
+
+.clues {
+    flex: 0.25;  /* Adjust this value for height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background-color: #fff7e6; /* Light orange background for the clues section */
+    position: relative;
+overflow: scroll;
+}
+
+.clue {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border: 1px solid #333;
+    background-color: #ffd700; /* Yellow background for clues */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.scene-clue {
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #87ceeb; /* Sky blue background for clickable clues in the scene */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    color: #fff; /* White text */
+}
+
+.scene-clue.disabled, .clue-option.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.dropbox {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #888;
+    background-color: #fff; /* White background for dropboxes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+padding:10px; margin:10px;
+}
+
+.panel {
+    display: none;
+    width:300px; /* panel width */
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #333;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.panel .clue-option {
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #32cd32; /* Light green background for clues in the panel */
+    color: #fff; /* White text */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.panel .clue-option:hover {
+    background-color: #228b22; /* Darker green on hover */
+}
+
+.message {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green background for buttons */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.controls button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/*Clues Position*/
+#openPanel {
+    position: absolute;
+    top: 50%; 
+    left: 40%;
+}
+
+#openPanel6 {
+    position: absolute;
+    top: 50%; 
+    left: 15%;
+}
+
+#openPanel7 {
+    position: absolute;
+    top: 50%; 
+    left: 30%;
+}
+
+#openPanel9 {
+    position: absolute;
+    top: 50%; 
+    left: 45%;
+}
+
+#openPanel4 {
+    position: absolute;
+    top: 50%; 
+    left: 55%;
+}
+
+#openPanel5 {
+    position: absolute;
+    top: 50%; 
+    left: 30%;
+}
+
+#openPanel2 {
+    position: absolute;
+    top: 50%; 
+    left: 45%;
+}
+
+#openPanel3 {
+    position: absolute;
+    top: 50%; 
+    left: 65%;
+}
+
+#openPanel8 {
+    position: absolute;
+    top: 20%; 
+    left: 45%;
+}
+
+#openPanel10 {
+    position: absolute;
+    top: 50%; 
+    left: 70%;
+}
+
+#openPanel11 {
+    position: absolute;
+    top: 20%; 
+    left: 55%;
+}
+#openPanel12 {
+    position: absolute;
+    top: 35%; 
+    left: 45%;
+}
+
+#openPanel13 {
+    position: absolute;
+    top: 35%; 
+    left: 65%;
+}
